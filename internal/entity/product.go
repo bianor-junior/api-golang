@@ -40,9 +40,9 @@ func (p *Product) Validate() error {
 	return nil
 }
 
-func NewProduct(id entity.ID, name string, price int) (*Product, error) {
+func NewProduct(name string, price int) (*Product, error) {
 	product := &Product{
-		ID: id,
+		ID: entity.NewID(),
 		Name: name,
 		Price: price,
 		CreatedAt: time.Now().Format(time.RFC3339),
